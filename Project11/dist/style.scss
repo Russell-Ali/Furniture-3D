@@ -1,0 +1,116 @@
+:root {
+  font-size: 16px;
+}
+$accent-clr: hsl(44, 13%, 40%);
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    margin: 0;
+    padding: 0;
+  }
+  a {
+    text-decoration: none;
+  }
+}
+.section {
+  height: 100vh;
+  width: 100vw;
+  .container {
+    height: 90vh;
+    width: 100%;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    .sceneCont {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      position: relative;
+      #scene {
+        width: 450px;
+        aspect-ratio: 1/1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .placeholder {
+          position: absolute;
+          width: 300px;
+          aspect-ratio: 1/1;
+        }
+      }
+      #helpTxt {
+        cursor: default;
+        display: block;
+        font-size: 1.6rem;
+        margin-right: 4.2rem;
+        position: absolute;
+        width: 320px;
+        padding: 0.4rem 0.8rem;
+        border-radius: 30px;
+        text-align: center;
+        color: rgba($color: #ffffff, $alpha: 0.8);
+        background: rgba($color: #1f1f1f, $alpha: 0.6);
+        opacity: 1;
+        transition: opacity 0.6s ease-in-out;
+        animation: floating ease-in-out 2s infinite;
+      }
+      @keyframes floating {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(10px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+    }
+    .text {
+      margin: 2rem;
+      margin-right: 0;
+      text-align: right;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      p {
+        font-size: 1.5rem;
+        font-weight: 500;
+      }
+    }
+  }
+  .navbar {
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 10vh;
+    background: $accent-clr;
+    .logo {
+      margin-left: -5rem;
+      .logoSvg {
+        width: 90px;
+        fill: white;
+      }
+    }
+    .navUl {
+      display: flex;
+      list-style: none;
+      flex-direction: row;
+      .navLi {
+        margin-left: 5rem;
+        a {
+          color: white;
+        }
+      }
+    }
+  }
+}
